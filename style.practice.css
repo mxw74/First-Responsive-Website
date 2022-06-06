@@ -1,0 +1,132 @@
+/* Define the grid for the smaller section  */
+.container{
+    display: grid;
+    grid-template-columns: 1, fr;;
+    grid-template-rows: 3;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "main"
+        "three"
+        "two"
+        "one";
+    text-align: center;
+  }
+
+
+  .one { grid-area: one; }
+  
+  .two { grid-area: two; }
+  
+  .three { grid-area: three; }
+  
+  main { grid-area: main; }
+/* ___________________________________________________________ */
+/* Make adjustments that will be standard accross mobile and desktop */
+main {
+      background-color: #33A8DD;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      width: auto;
+      /* padding: 0; */
+      font-size: 30px;
+      max-width: 475px;
+      text-align: left;
+      min-width: 475px;
+}
+
+.title {
+    text-decoration: underline;
+}
+
+h3 {
+    justify-content: center;
+    margin: 0 auto
+}
+
+p {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 470px;
+}
+
+.barone {
+    background-color: #33A8DD;
+}
+
+.bartwo {
+    background-color: #F46730;
+}
+
+.barthree {
+    background-color: #2BCEC0;
+}
+
+.barone, .bartwo, .barthree {
+    height: 30px;
+    width: 470px;
+}
+
+
+  /* ___________________________________________________________ */
+ /* Make the mobile interface */
+  @media (min-width:576px) {
+    
+    main {
+        /* padding: 100px; */
+    }
+
+    p {
+        max-width: 400px;
+    }
+    
+    .barone, .bartwo, .barthree {
+        width: 470px;
+        max-width: 470px;
+    }
+     
+  }
+/* ___________________________________________________________ */
+ /*Re-define the grid layouts for the desktop version and make required edits  */
+@media (min-width:970px) {
+    .container {  display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "main main main"
+          "one two three";
+        background-color: black;
+        color: white;
+      }
+
+      main {
+          background-color: #2BCEC0;
+          max-width: 100%;
+          min-width: 100%;
+          overflow: hidden;
+          height: auto;
+          padding: 0%;
+      }
+
+      .barone, .bartwo, .barthree {
+        width: 200px;
+    }
+
+    p {
+        max-width: 200px;
+    }
+
+    .one, .two, .three {
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 50px;
+        padding-bottom: 65px;
+    }
+  }
